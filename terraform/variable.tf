@@ -18,3 +18,7 @@ variable "common_tags" {
 variable "zone_name" {
   default = "harishbalike.online"
 }
+
+variable "app_version" {
+  
+}
