@@ -37,7 +37,7 @@ resource "null_resource" "backend" {
     provisioner "remote-exec" {
         inline = [
             "chmod +x /tmp/${var.common_tags.Component}.sh",
-            "sudo sh /tmp/${var.common_tags.Component}.sh  ${var.common_tags.Component}  ${var.environment} ${var.app_version}"
+            "sudo sh /tmp/${var.common_tags.Component}.sh ${var.common_tags.Component} ${var.environment} ${var.app_version}"
         ]
     } 
 }
@@ -162,7 +162,7 @@ resource "aws_autoscaling_policy" "backend" {
       predefined_metric_type = "ASGAverageCPUUtilization"
     }
 
-    target_value = 80.0
+    target_value = 10.0
   }
 }
 
